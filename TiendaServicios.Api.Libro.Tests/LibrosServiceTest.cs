@@ -74,11 +74,9 @@ namespace TiendaServicios.Api.Libro.Tests
         [Fact]
         public async void GetLibros()
         {
-            System.Diagnostics.Debugger.Launch();
-            //Utilizando el mock emulamos contexto libreria
+            //Aqui avia algo
             var mockContexto = CrearContexto();
 
-            //emulamos el mapper con el mock
             var mapConfig = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile(new MappingTest());
@@ -86,7 +84,6 @@ namespace TiendaServicios.Api.Libro.Tests
 
             var mapper = mapConfig.CreateMapper();
 
-            //Intsanciamos la clase manejador
             Consulta.Manejador manejador = new Consulta.Manejador(mockContexto.Object,mapper);
 
             Consulta.Ejecuta request = new Consulta.Ejecuta();
